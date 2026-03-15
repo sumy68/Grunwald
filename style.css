@@ -142,3 +142,91 @@ footer a:hover { color: rgba(255,255,255,0.6); }
   .sidebar { position: static; }
   footer { padding: 24px; flex-direction: column; align-items: flex-start; }
 }
+
+/* ─── HAMBURGER MENU ─────────────────────────── */
+.hamburger {
+  display: none; flex-direction: column; gap: 5px;
+  cursor: pointer; padding: 8px; background: none; border: none;
+}
+.hamburger span {
+  width: 24px; height: 2px; background: var(--dark);
+  border-radius: 2px; transition: all .3s; display: block;
+}
+.mobile-menu {
+  display: none; position: fixed;
+  top: 72px; left: 0; right: 0;
+  background: var(--warm-white);
+  border-bottom: 1px solid var(--border);
+  padding: 16px 24px 24px; z-index: 998;
+  flex-direction: column; gap: 0;
+  box-shadow: 0 8px 32px rgba(0,0,0,.1);
+  max-height: calc(100vh - 72px); overflow-y: auto;
+}
+.mobile-menu.open { display: flex; }
+.mobile-menu a {
+  display: block; padding: 14px 0; font-size: 1rem;
+  font-weight: 400; color: var(--mid); text-decoration: none;
+  border-bottom: 1px solid var(--border); transition: color .2s;
+}
+.mobile-menu a:last-child { border-bottom: none; }
+.mobile-menu a:hover { color: var(--sage); }
+.mobile-menu .mobile-section {
+  font-size: .68rem; font-weight: 600; text-transform: uppercase;
+  letter-spacing: .14em; color: var(--light); padding: 18px 0 4px;
+}
+.mobile-menu .mobile-btn {
+  margin-top: 16px; background: var(--sage); color: white !important;
+  padding: 14px 24px; border-radius: 50px; text-align: center;
+  font-weight: 500 !important; border-bottom: none !important;
+}
+
+/* ─── MOBILE OVERRIDES ───────────────────────── */
+@media (max-width: 1024px) {
+  .navbar { padding: 0 20px; }
+  .nav-links { display: none; }
+  .hamburger { display: flex; }
+
+  .page-header { padding: 48px 20px 40px; margin-top: 72px; }
+  .page-header h1 { font-size: clamp(1.8rem, 7vw, 2.8rem); }
+  .page-header .breadcrumb { flex-wrap: wrap; }
+  .content, .content-narrow { padding: 40px 20px; }
+
+  .hours-strip { padding: 0 16px; }
+  .hours-label { display: none; }
+  .h-entry { padding: 0 10px; }
+  .h-time { font-size: .75rem; }
+  .notruf { padding: 0 10px; font-size: .7rem; }
+
+  .cards-grid, .cards-grid-2 { grid-template-columns: 1fr; }
+  .two-col { grid-template-columns: 1fr; gap: 32px; }
+  .sidebar { position: static; }
+  .sidebar-card { padding: 24px; }
+  .sidebar-nav { padding: 20px; }
+
+  .h2 { font-size: clamp(1.6rem, 5vw, 2.4rem); }
+  .btn-fill, .btn-ghost { padding: 13px 24px; font-size: .85rem; }
+
+  footer { padding: 24px 20px; flex-direction: column; align-items: flex-start; gap: 12px; }
+  .footer-links { flex-wrap: wrap; gap: 16px; }
+
+  .lv-mini { grid-template-columns: 1fr 1fr; }
+  .lv-card { padding: 32px 28px; }
+}
+
+@media (max-width: 600px) {
+  .page-header { padding: 36px 16px 28px; }
+  .content, .content-narrow { padding: 28px 16px; }
+  .card { padding: 24px 20px; }
+  .hours-strip { height: 48px; }
+  .h-entry { padding: 0 6px; }
+  .h-day { font-size: .62rem; }
+  .h-time { font-size: .7rem; }
+  .notruf { display: none; }
+  .st-grid { grid-template-columns: repeat(3, 1fr); gap: 8px; }
+  .st-card { padding: 14px 10px; }
+  .termin-box { padding: 28px 20px; }
+  .termin-box h3 { font-size: 1.6rem; }
+  .prose img { max-width: 100% !important; }
+  .lv-mini { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .lv-mini-card { padding: 14px; }
+}

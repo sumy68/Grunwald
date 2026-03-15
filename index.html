@@ -119,16 +119,43 @@
 .hero-trust{animation:fadeUp .5s .4s both}
 
 @media(max-width:1024px){
-  .hero{grid-template-columns:1fr}.hero-right{min-height:360px}.hero-left{padding:48px 24px}
-  .sp-sec,.l-sec,.team-sec,.kontakt-sec{padding:60px 24px}
-  .sp-header{grid-template-columns:1fr}.sp-cards{grid-template-columns:1fr}
-  .leistungen-grid{grid-template-columns:1fr}.l-cols{grid-template-columns:1fr}
+  .hero{grid-template-columns:1fr}
+  .hero-right{min-height:300px}
+  .hero-left{padding:48px 20px 40px}
+  .hero-trust{gap:20px}
+  .trust-div{display:none}
+  .sp-sec,.l-sec,.team-sec,.kontakt-sec{padding:56px 20px}
+  .sp-header{grid-template-columns:1fr}
+  .sp-cards{grid-template-columns:1fr}
+  .leistungen-grid{grid-template-columns:1fr}
+  .l-cols{grid-template-columns:1fr}
   .team-grid{grid-template-columns:1fr 1fr}
   .kontakt-inner{grid-template-columns:1fr}
-  .st-grid{grid-template-columns:repeat(3,1fr)}
-  .hero-cert{display:none}.lv-mini{grid-template-columns:1fr 1fr}
+  .st-grid{grid-template-columns:repeat(3,1fr);gap:8px}
+  .hero-cert{display:none}
+  .lv-mini{grid-template-columns:1fr 1fr}
+  .hero-badge{bottom:16px;right:16px;padding:14px 16px}
+  .gbiz{margin-bottom:12px}
+  .termin-box{padding:32px 24px}
 }
-@media(max-width:600px){.team-grid{grid-template-columns:1fr}.st-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){
+  .hero-left{padding:36px 16px 32px}
+  .hero h1{font-size:2.6rem}
+  .hero-desc{font-size:.92rem}
+  .hero-actions{flex-direction:column;align-items:flex-start}
+  .hero-actions .btn-fill,.hero-actions .btn-ghost{width:100%;justify-content:center}
+  .hero-right{min-height:240px}
+  .hero-badge{display:none}
+  .team-grid{grid-template-columns:1fr}
+  .st-grid{grid-template-columns:repeat(2,1fr)}
+  .sp-sec,.l-sec,.team-sec,.kontakt-sec{padding:40px 16px}
+  .lv-card{padding:28px 20px}
+  .lv-mini{grid-template-columns:1fr 1fr;gap:10px}
+  .lv-mini-card{padding:14px}
+  .sp-card{padding:32px 24px}
+  .termin-box{padding:24px 16px}
+  .kontakt-sec .h2{font-size:1.8rem}
+}
 </style>
 </head>
 <body>
