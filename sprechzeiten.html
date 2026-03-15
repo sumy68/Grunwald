@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sprechzeiten | Praxis Eva Kell-Grunwald</title>
+<link rel="stylesheet" href="style.css">
+<style>
+.st-table{width:100%;border-collapse:collapse;margin-top:40px}
+.st-table th{font-size:.72rem;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:var(--light);padding:0 0 16px;text-align:left;border-bottom:2px solid var(--border)}
+.st-table td{padding:20px 0;border-bottom:1px solid var(--border);font-size:.95rem;color:var(--mid);font-weight:300}
+.st-table td:first-child{font-weight:500;color:var(--dark)}
+.st-table td .time-badge{display:inline-block;background:var(--sage-light);color:var(--sage);padding:4px 12px;border-radius:20px;font-size:.82rem;font-weight:500;margin-right:8px}
+.info-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:64px}
+.info-card{background:var(--cream);border-radius:20px;padding:32px;border:1px solid var(--border)}
+.info-card h3{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:600;color:var(--dark);margin-bottom:12px}
+.info-card p{font-size:.88rem;color:var(--mid);font-weight:300;line-height:1.7}
+.notruf-card{background:var(--dark);color:white;border-radius:20px;padding:32px;margin-top:24px}
+.notruf-card h3{font-family:'Cormorant Garamond',serif;font-size:1.3rem;color:white;margin-bottom:12px}
+.notruf-card p{font-size:.88rem;opacity:.6;font-weight:300;line-height:1.7;margin-bottom:16px}
+.notruf-nums{display:flex;gap:16px;flex-wrap:wrap}
+.notruf-num{background:rgba(255,255,255,.08);border-radius:12px;padding:12px 20px;text-align:center}
+.notruf-num .num{font-size:1.4rem;font-weight:600;color:white}
+.notruf-num .lbl{font-size:.7rem;opacity:.5;text-transform:uppercase;letter-spacing:.1em}
+@media(max-width:768px){.info-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="page-header">
+  <div class="breadcrumb"><a href="index.html">Home</a><span>/</span>Sprechzeiten</div>
+  <h1>Sprechzeiten</h1>
+  <p>Sie erreichen uns Montag bis Freitag ab 09:00 Uhr. Bei akuten Beschwerden vereinbaren Sie bitte einen Termin in unserer Akutsprechstunde.</p>
+</div>
+<div class="content">
+  <div class="label-row"><div class="label-line"></div><span class="label-text">Öffnungszeiten</span></div>
+  <h2 class="h2">Wann wir für Sie da sind</h2>
+  <table class="st-table">
+    <thead><tr><th>Tag</th><th>Vormittag</th><th>Nachmittag</th></tr></thead>
+    <tbody>
+      <tr><td>Montag</td><td><span class="time-badge">09:00 – 12:00</span></td><td><span class="time-badge">18:00 – 19:00</span></td></tr>
+      <tr><td>Dienstag</td><td><span class="time-badge">09:00 – 12:00</span></td><td><span class="time-badge">16:00 – 18:00</span></td></tr>
+      <tr><td>Mittwoch</td><td><span class="time-badge">09:00 – 13:00</span></td><td>—</td></tr>
+      <tr><td>Donnerstag</td><td><span class="time-badge">09:00 – 12:00</span></td><td><span class="time-badge">16:00 – 18:00</span></td></tr>
+      <tr><td>Freitag</td><td><span class="time-badge">09:00 – 13:00</span></td><td>—</td></tr>
+    </tbody>
+  </table>
+  <div class="info-grid">
+    <div class="info-card">
+      <h3>Infektsprechstunde</h3>
+      <p>Wir bieten täglich am späten Vormittag nach telefonischer Anmeldung eine Infektsprechstunde an. Bei Infektsymptomen besuchen Sie bitte nicht unangemeldet unsere Praxis.</p>
+    </div>
+    <div class="info-card">
+      <h3>Termin vereinbaren</h3>
+      <p>Wir bitten dringend um Terminvereinbarung. Sie können uns telefonisch oder über unsere Praxis-App erreichen.</p>
+      <a href="tel:+498444545" class="btn-fill" style="margin-top:20px">📞 +49 (8444) 545</a>
+    </div>
+  </div>
+  <div class="notruf-card">
+    <h3>Außerhalb der Sprechzeiten</h3>
+    <p>Sollten Sie am Wochenende, an Feiertagen oder außerhalb unserer Sprechzeiten ärztliche Hilfe benötigen:</p>
+    <div class="notruf-nums">
+      <div class="notruf-num"><div class="num">116 117</div><div class="lbl">Ärztlicher Bereitschaftsdienst</div></div>
+      <div class="notruf-num"><div class="num">112</div><div class="lbl">Notfall / Rettungsdienst</div></div>
+    </div>
+  </div>
+</div>
+<script src="components.js"></script>
+<script>initPage('sprechzeiten')</script>
+</body>
+</html>

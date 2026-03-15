@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Praxis Eva Kell-Grunwald | Allgemeinmedizin Schweitenkirchen</title>
+<meta name="description" content="Ihre Allgemeinmedizinerin in Schweitenkirchen. Ganzheitliche Medizin, moderne Diagnostik, persönliche Betreuung.">
+<link rel="stylesheet" href="style.css">
+<style>
+/* HERO */
+.hero{margin-top:72px;display:grid;grid-template-columns:55% 45%;min-height:calc(100vh - 72px)}
+.hero-left{padding:80px 64px 80px 80px;display:flex;flex-direction:column;justify-content:center}
+.eyebrow-row{display:flex;align-items:center;gap:12px;margin-bottom:32px}
+.eyebrow-line{width:32px;height:1.5px;background:var(--sage)}
+.eyebrow-text{font-size:.72rem;font-weight:500;text-transform:uppercase;letter-spacing:.18em;color:var(--sage)}
+.hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(3rem,5vw,4.4rem);font-weight:600;line-height:1.1;color:var(--dark);margin-bottom:28px}
+.hero h1 em{font-style:italic;color:var(--sage)}
+.hero-desc{font-size:1rem;font-weight:300;color:var(--mid);line-height:1.85;max-width:460px;margin-bottom:48px}
+.hero-actions{display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+.hero-trust{margin-top:64px;display:flex;gap:40px;align-items:center;flex-wrap:wrap}
+.trust-num{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:600;color:var(--sage);line-height:1}
+.trust-label{font-size:.73rem;font-weight:400;color:var(--light);text-transform:uppercase;letter-spacing:.1em;margin-top:3px}
+.trust-div{width:1px;height:48px;background:var(--border)}
+.hero-right{background:var(--sage-light);position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.hero-right::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 80% 20%,rgba(74,124,89,.18) 0%,transparent 55%),radial-gradient(circle at 20% 80%,rgba(181,212,188,.4) 0%,transparent 50%)}
+.hero-photo{width:65%;aspect-ratio:3/4;border-radius:24px;object-fit:cover;object-position:top;position:relative;z-index:2;box-shadow:0 32px 80px rgba(0,0,0,.18);border:4px solid rgba(255,255,255,.8)}
+.hero-badge{position:absolute;bottom:48px;right:36px;background:rgba(253,252,250,.95);backdrop-filter:blur(12px);border-radius:18px;padding:18px 22px;z-index:3;box-shadow:0 16px 48px rgba(0,0,0,.1)}
+.badge-title{font-size:.68rem;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:var(--sage);margin-bottom:4px}
+.badge-value{font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:600;color:var(--dark)}
+.hero-cert{position:absolute;top:40px;left:30px;background:var(--sage);color:#fff;border-radius:14px;padding:14px 18px;z-index:3;box-shadow:0 8px 24px rgba(74,124,89,.3)}
+.cert-l{font-size:.65rem;font-weight:600;text-transform:uppercase;letter-spacing:.12em;opacity:.7;margin-bottom:3px}
+.cert-v{font-size:.8rem;font-weight:500;line-height:1.4}
+
+/* SCHWERPUNKTE */
+.sp-sec{padding:100px 80px;background:var(--cream)}
+.sp-header{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:end;margin-bottom:64px}
+.sp-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--border);border:1px solid var(--border);border-radius:24px;overflow:hidden}
+.sp-card{background:var(--warm-white);padding:48px 40px;transition:background .25s;text-decoration:none;display:block;color:inherit}
+.sp-card:hover{background:#fff}
+.sp-num{font-family:'Cormorant Garamond',serif;font-size:3rem;font-weight:400;color:var(--sage-light);line-height:1;margin-bottom:24px}
+.sp-card h3{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:600;color:var(--dark);margin-bottom:12px;line-height:1.3}
+.sp-card p{font-size:.875rem;font-weight:300;color:var(--mid);line-height:1.8}
+.sp-link{display:inline-flex;align-items:center;gap:6px;margin-top:24px;font-size:.78rem;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:var(--sage)}
+
+/* LEISTUNGEN */
+.l-sec{padding:100px 80px}
+.leistungen-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+.l-cols{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-top:40px}
+.l-item{padding:15px 0;border-bottom:1px solid var(--border);display:flex;gap:12px;align-items:flex-start;transition:padding .2s}
+.l-item:hover{padding-left:6px}
+.l-dot{width:6px;height:6px;background:var(--sage);border-radius:50%;flex-shrink:0;margin-top:8px}
+.l-text{font-size:.88rem;font-weight:400;color:var(--mid)}
+.lv-card{background:var(--sage);color:#fff;border-radius:24px;padding:48px;margin-bottom:16px}
+.lv-card h3{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:600;line-height:1.2;margin-bottom:16px}
+.lv-card p{font-size:.88rem;font-weight:300;opacity:.75;line-height:1.8;margin-bottom:28px}
+.lv-feats{display:flex;flex-direction:column;gap:12px}
+.lv-feat{display:flex;gap:12px;align-items:center}
+.lv-feat-icon{width:36px;height:36px;background:rgba(255,255,255,.12);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0}
+.lv-feat span{font-size:.85rem;opacity:.85}
+.lv-mini{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px}
+.lv-mini-card{background:var(--cream);border-radius:16px;padding:20px;border:1px solid var(--border)}
+.lv-mini-icon{font-size:1.4rem;margin-bottom:8px}
+.lv-mini h4{font-size:.83rem;font-weight:600;color:var(--dark);margin-bottom:3px}
+.lv-mini p{font-size:.75rem;color:var(--light);font-weight:300}
+
+/* TEAM */
+.team-sec{padding:100px 80px;background:var(--cream)}
+.team-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:64px;flex-wrap:wrap;gap:24px}
+.team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
+.team-card{background:var(--warm-white);border-radius:24px;overflow:hidden;border:1px solid var(--border);transition:transform .3s,box-shadow .3s;text-decoration:none;color:inherit;display:block}
+.team-card:hover{transform:translateY(-6px);box-shadow:0 24px 64px rgba(0,0,0,.1)}
+.team-photo-wrap{width:100%;aspect-ratio:1/1;overflow:hidden;background:var(--sage-light)}
+.team-photo-wrap img{width:100%;height:100%;object-fit:cover;object-position:top center;transition:transform .4s;display:block}
+.team-card:hover .team-photo-wrap img{transform:scale(1.04)}
+.team-placeholder{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:5rem;background:linear-gradient(135deg,var(--sage-light),var(--sage-mid))}
+.team-info{padding:28px}
+.team-info h3{font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-weight:600;color:var(--dark);margin-bottom:5px}
+.team-role{font-size:.78rem;font-weight:500;color:var(--sage);text-transform:uppercase;letter-spacing:.1em}
+
+/* KONTAKT */
+.kontakt-sec{padding:100px 80px;background:var(--dark);color:#fff}
+.kontakt-sec .label-line{background:var(--sage-mid)}
+.kontakt-sec .label-text{color:var(--sage-mid)}
+.kontakt-inner{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+.k-list{margin-top:40px;display:flex;flex-direction:column}
+.k-item{display:flex;gap:18px;align-items:flex-start;padding:22px 0;border-bottom:1px solid rgba(255,255,255,.07)}
+.k-icon{width:44px;height:44px;background:rgba(255,255,255,.06);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0}
+.k-lbl{font-size:.68rem;font-weight:600;text-transform:uppercase;letter-spacing:.14em;color:rgba(255,255,255,.35);margin-bottom:4px}
+.k-val{font-size:.92rem;color:rgba(255,255,255,.82);line-height:1.5}
+.st-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:40px}
+.st-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:20px;text-align:center}
+.st-day{font-size:.68rem;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:rgba(255,255,255,.35);margin-bottom:10px}
+.st-time{font-size:.78rem;color:rgba(255,255,255,.75);line-height:1.8}
+.termin-box{background:var(--sage);border-radius:28px;padding:52px 48px}
+.termin-box h3{font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:600;color:#fff;line-height:1.2;margin-bottom:16px}
+.termin-box p{font-size:.88rem;font-weight:300;color:rgba(255,255,255,.65);line-height:1.85;margin-bottom:36px}
+.btn-white{display:inline-flex;align-items:center;gap:10px;background:#fff;color:var(--sage);padding:15px 34px;border-radius:50px;font-size:.88rem;font-weight:600;text-decoration:none;transition:all .25s}
+.btn-white:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(0,0,0,.2)}
+.mail-link{display:inline-flex;align-items:center;gap:8px;margin-top:18px;font-size:.82rem;color:rgba(255,255,255,.45);text-decoration:none}
+.mail-link:hover{color:rgba(255,255,255,.7)}
+
+/* Google Business Card */
+.gbiz{background:#fff;border-radius:20px;overflow:hidden;margin-bottom:20px;box-shadow:0 4px 24px rgba(0,0,0,.15)}
+.gbiz-map{width:100%;height:180px;background:var(--sage-light)}
+.gbiz-map iframe{width:100%;height:100%;border:0;display:block}
+.gbiz-body{padding:20px 22px}
+.gbiz-name{font-size:1rem;font-weight:600;color:#1a1a1a;margin-bottom:3px}
+.gbiz-cat{font-size:.78rem;color:#666;margin-bottom:14px}
+.gbiz-row{font-size:.8rem;color:#555;margin-bottom:10px;display:flex;gap:6px;align-items:flex-start}
+.gbiz-open{font-size:.78rem;display:flex;gap:6px;align-items:center;margin-bottom:16px}
+.gbiz-dot{width:8px;height:8px;background:#34a853;border-radius:50%;flex-shrink:0}
+.gbiz-btn{display:flex;align-items:center;justify-content:center;gap:8px;background:#f8f9fa;border:1px solid #e0e0e0;border-radius:10px;padding:10px;font-size:.8rem;font-weight:500;color:#1a73e8;text-decoration:none;transition:background .2s}
+.gbiz-btn:hover{background:#e8f0fe}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+.eyebrow-row{animation:fadeUp .5s .0s both}
+.hero h1{animation:fadeUp .5s .1s both}
+.hero-desc{animation:fadeUp .5s .2s both}
+.hero-actions{animation:fadeUp .5s .3s both}
+.hero-trust{animation:fadeUp .5s .4s both}
+
+@media(max-width:1024px){
+  .hero{grid-template-columns:1fr}.hero-right{min-height:360px}.hero-left{padding:48px 24px}
+  .sp-sec,.l-sec,.team-sec,.kontakt-sec{padding:60px 24px}
+  .sp-header{grid-template-columns:1fr}.sp-cards{grid-template-columns:1fr}
+  .leistungen-grid{grid-template-columns:1fr}.l-cols{grid-template-columns:1fr}
+  .team-grid{grid-template-columns:1fr 1fr}
+  .kontakt-inner{grid-template-columns:1fr}
+  .st-grid{grid-template-columns:repeat(3,1fr)}
+  .hero-cert{display:none}.lv-mini{grid-template-columns:1fr 1fr}
+}
+@media(max-width:600px){.team-grid{grid-template-columns:1fr}.st-grid{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-left">
+    <div class="eyebrow-row">
+      <div class="eyebrow-line"></div>
+      <span class="eyebrow-text">Ihre Hausarztpraxis in Schweitenkirchen</span>
+    </div>
+    <h1>Medizin,<br>die <em>wirklich</em><br>zuhört.</h1>
+    <p class="hero-desc">Ganzheitliche Allgemeinmedizin – wir behandeln nicht nur Symptome, sondern verstehen Ihre Gesundheit als Ganzes. Persönlich, kompetent, vertrauensvoll.</p>
+    <div class="hero-actions">
+      <a href="tel:+498444545" class="btn-fill">📞 Termin vereinbaren</a>
+      <a href="leistungen.html" class="btn-ghost">Unsere Leistungen</a>
+    </div>
+    <div class="hero-trust">
+      <div><div class="trust-num">3</div><div class="trust-label">Erfahrene Fachkräfte</div></div>
+      <div class="trust-div"></div>
+      <div><div class="trust-num">Mo–Fr</div><div class="trust-label">Persönliche Betreuung</div></div>
+      <div class="trust-div"></div>
+      <div><div class="trust-num">HÄQM</div><div class="trust-label">Zertifizierte Qualität</div></div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-cert"><div class="cert-l">Zertifiziert</div><div class="cert-v">HÄQM/HÄQS<br>Bayerischer Hausärzteverband</div></div>
+    <img class="hero-photo" src="https://www.arzt-schweitenkirchen.de/fileadmin/_processed_/c/f/csm_Eva_Kell-Grunwald_800_5efb152e35.webp" alt="Dr. Eva Kell-Grunwald" onerror="this.outerHTML='<div class=hero-photo style=width:65%;aspect-ratio:3/4;border-radius:24px;background:linear-gradient(135deg,#c8e6c9,#a5d6a7);display:flex;align-items:center;justify-content:center;font-size:6rem;position:relative;z-index:2>👩‍⚕️</div>'">
+    <div class="hero-badge"><div class="badge-title">Fachärztin für</div><div class="badge-value">Allgemeinmedizin</div></div>
+  </div>
+</div>
+
+<!-- SCHWERPUNKTE -->
+<section class="sp-sec" id="schwerpunkte">
+  <div class="sp-header">
+    <div>
+      <div class="label-row"><div class="label-line"></div><span class="label-text">Medizinische Schwerpunkte</span></div>
+      <h2 class="h2">Spezialisiertes Wissen<br>für Ihre Gesundheit</h2>
+    </div>
+    <p class="body-text" style="max-width:360px">Drei Bereiche, denen wir uns mit besonderer Tiefe und Erfahrung widmen.</p>
+  </div>
+  <div class="sp-cards">
+    <a href="schwerpunkte/bluthochdruck.html" class="sp-card">
+      <div class="sp-num">01</div>
+      <h3>Bluthochdruck<br>(Hypertonie)</h3>
+      <p>Umfassende Diagnostik und langfristige Therapie – von der Langzeit-Blutdruckmessung bis zur individuellen Behandlung.</p>
+      <span class="sp-link">Mehr erfahren →</span>
+    </a>
+    <a href="schwerpunkte/diabetes.html" class="sp-card">
+      <div class="sp-num">02</div>
+      <h3>Diabetes<br>Typ II</h3>
+      <p>Professionelle, langfristige Begleitung bei Diabetes mellitus Typ 2 – mit moderner Diagnostik und individuellen Therapieplänen.</p>
+      <span class="sp-link">Mehr erfahren →</span>
+    </a>
+    <a href="schwerpunkte/praevention.html" class="sp-card">
+      <div class="sp-num">03</div>
+      <h3>Präventions­medizin</h3>
+      <p>Krankheiten vorbeugen statt nur behandeln – Gesundheits-Checks, Impfungen und Vorsorgeuntersuchungen aus einer Hand.</p>
+      <span class="sp-link">Mehr erfahren →</span>
+    </a>
+  </div>
+</section>
+
+<!-- LEISTUNGEN -->
+<section class="l-sec" id="leistungen">
+  <div class="leistungen-grid">
+    <div>
+      <div class="label-row"><div class="label-line"></div><span class="label-text">Unser Leistungsspektrum</span></div>
+      <h2 class="h2" style="margin-bottom:16px">Was wir<br>für Sie tun</h2>
+      <p class="body-text">Von der Früherkennung bis zur Therapie – ein breites Spektrum aus einer Hand.</p>
+      <div class="l-cols">
+        <div>
+          <div class="l-item"><div class="l-dot"></div><span class="l-text">Gesundheits-Check & Vorsorge</span></div>
+          <div class="l-item"><div class="l-dot"></div><span class="l-text">Hautkrebsvorsorge</span></div>
+          <div class="l-item"><div class="l-dot"></div><span class="l-text">Impfungen & Reisemedizin</span></div>
+          <div class="l-item"><div class="l-dot"></div><span class="l-text">EKG & Langzeit-EKG</span></div>
+          <div class="l-item"><div class="l-dot"></div><span class="l-text">Belastungs-EKG (Ergometrie)</span></div>
+          <div class="l-item"><div class="l-dot"></div><span class="l-text">Langzeit-Blutdruckmessung</span></div>
+        </div>
+        <div>
+          <div class="l-item"><div class="l-dot"></div><span class="l-text">Lungenfunktion (Spirometrie)</span></div>
+          <div class="l-item"><div class="l-dot"></div><span class="l-text">Ultraschall Bauchorgane</span></div>
+          <div class="l-item"><div class="l-dot"></div><span class="l-text">Akupunktur</span></div>
+          <div class="l-item"><div class="l-dot"></div><span class="l-text">Psychosomatik</span></div>
+          <div class="l-item"><div class="l-dot"></div><span class="l-text">E-Rezept & ePA</span></div>
+          <div class="l-item"><div class="l-dot"></div><span class="l-text">Vitalstoffmedizin</span></div>
+        </div>
+      </div>
+      <a href="leistungen.html" class="btn-fill" style="margin-top:40px">Alle Leistungen ansehen →</a>
+    </div>
+    <div>
+      <div class="lv-card">
+        <h3>Rundum gut versorgt.</h3>
+        <p>Moderne Diagnostik, ganzheitliche Therapie und digitale Services – alles in einer Praxis.</p>
+        <div class="lv-feats">
+          <div class="lv-feat"><div class="lv-feat-icon">📱</div><span>E-Rezept per App</span></div>
+          <div class="lv-feat"><div class="lv-feat-icon">🗂️</div><span>Elektronische Patientenakte (ePA)</span></div>
+          <div class="lv-feat"><div class="lv-feat-icon">♿</div><span>Barrierefreier Zugang (Lift)</span></div>
+          <div class="lv-feat"><div class="lv-feat-icon">🅿️</div><span>Kostenfreie Parkplätze</span></div>
+        </div>
+      </div>
+      <div class="lv-mini">
+        <div class="lv-mini-card"><div class="lv-mini-icon">🏅</div><h4>HÄQM-Zertifiziert</h4><p>Bayerischer Hausärzteverband</p></div>
+        <div class="lv-mini-card"><div class="lv-mini-icon">💊</div><h4>Rezept-Hotline</h4><p>08444 915748</p></div>
+        <div class="lv-mini-card"><div class="lv-mini-icon">🤒</div><h4>Infektsprechstunde</h4><p>Täglich nach Anmeldung</p></div>
+        <div class="lv-mini-card"><div class="lv-mini-icon">🌿</div><h4>Naturheilkunde</h4><p>Phytotherapie & mehr</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section class="team-sec" id="team">
+  <div class="team-header">
+    <div>
+      <div class="label-row"><div class="label-line"></div><span class="label-text">Unser Praxisteam</span></div>
+      <h2 class="h2">Menschen, denen<br>Sie vertrauen können</h2>
+    </div>
+    <a href="team.html" class="btn-ghost">Alle kennenlernen →</a>
+  </div>
+  <div class="team-grid">
+    <a href="team/eva-kell-grunwald.html" class="team-card">
+      <div class="team-photo-wrap"><img src="https://www.arzt-schweitenkirchen.de/fileadmin/_processed_/c/f/csm_Eva_Kell-Grunwald_800_5efb152e35.webp" alt="Eva Kell-Grunwald" onerror="this.outerHTML='<div class=team-placeholder>👩‍⚕️</div>'"></div>
+      <div class="team-info"><h3>Eva Kell-Grunwald</h3><div class="team-role">Fachärztin für Allgemeinmedizin</div></div>
+    </a>
+    <a href="team/alexandra-jaksch.html" class="team-card">
+      <div class="team-photo-wrap"><img src="https://www.arzt-schweitenkirchen.de/fileadmin/_processed_/5/c/csm_Alexandra_Jaksch_800px_08f3c5ae16.webp" alt="Alexandra Jaksch" onerror="this.outerHTML='<div class=team-placeholder>👩</div>'"></div>
+      <div class="team-info"><h3>Alexandra Jaksch</h3><div class="team-role">Praxisteam</div></div>
+    </a>
+    <a href="team/sarah-ziegltrum.html" class="team-card">
+      <div class="team-photo-wrap"><img src="https://www.arzt-schweitenkirchen.de/fileadmin/_processed_/5/9/csm_Sarah_Ziegeltrum_800px_25c84b151d.webp" alt="Sarah Ziegltrum" onerror="this.outerHTML='<div class=team-placeholder>👩</div>'"></div>
+      <div class="team-info"><h3>Sarah Ziegltrum</h3><div class="team-role">Praxisteam</div></div>
+    </a>
+  </div>
+</section>
+
+<!-- KONTAKT -->
+<section class="kontakt-sec" id="kontakt">
+  <div class="kontakt-inner">
+    <div>
+      <div class="label-row"><div class="label-line"></div><span class="label-text">Kontakt & Anfahrt</span></div>
+      <h2 class="h2" style="color:white;margin-bottom:8px">Wir freuen uns<br>auf Ihren Besuch</h2>
+      <div class="k-list">
+        <div class="k-item"><div class="k-icon">📍</div><div><div class="k-lbl">Adresse</div><div class="k-val">Hauptstr. 29, 85301 Schweitenkirchen<br>Rathausgebäude · 1. Stock · Lift vorhanden</div></div></div>
+        <div class="k-item"><div class="k-icon">📞</div><div><div class="k-lbl">Telefon</div><div class="k-val">+49 (8444) 545</div></div></div>
+        <div class="k-item"><div class="k-icon">✉️</div><div><div class="k-lbl">E-Mail</div><div class="k-val">info@arzt-schweitenkirchen.de</div></div></div>
+        <div class="k-item"><div class="k-icon">💊</div><div><div class="k-lbl">Rezept-Anrufbeantworter</div><div class="k-val">08444 915748</div></div></div>
+      </div>
+      <div class="st-grid">
+        <div class="st-card"><div class="st-day">Mo</div><div class="st-time">09–12 Uhr<br>18–19 Uhr</div></div>
+        <div class="st-card"><div class="st-day">Di</div><div class="st-time">09–12 Uhr<br>16–18 Uhr</div></div>
+        <div class="st-card"><div class="st-day">Mi</div><div class="st-time">09–13 Uhr</div></div>
+        <div class="st-card"><div class="st-day">Do</div><div class="st-time">09–12 Uhr<br>16–18 Uhr</div></div>
+        <div class="st-card"><div class="st-day">Fr</div><div class="st-time">09–13 Uhr</div></div>
+      </div>
+    </div>
+    <div>
+      <div class="gbiz">
+        <div class="gbiz-map"><iframe src="https://www.google.com/maps?q=Hauptstr.+29,+85301+Schweitenkirchen&output=embed" allowfullscreen loading="lazy"></iframe></div>
+        <div class="gbiz-body">
+          <div class="gbiz-name">Praxis Eva Kell-Grunwald</div>
+          <div class="gbiz-cat">Allgemeinmedizin · Schweitenkirchen</div>
+          <div class="gbiz-row">📍 Hauptstr. 29, 85301 Schweitenkirchen</div>
+          <div class="gbiz-row">📞 +49 (8444) 545</div>
+          <div class="gbiz-open"><div class="gbiz-dot"></div><span style="color:#34a853;font-weight:500">Heute geöffnet</span><span style="color:#888;margin-left:4px">· 09:00 – 12:00 Uhr</span></div>
+          <a href="https://maps.google.com/?q=Hauptstr.+29,+85301+Schweitenkirchen" target="_blank" class="gbiz-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="#1a73e8"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+            In Google Maps öffnen
+          </a>
+        </div>
+      </div>
+      <div class="termin-box">
+        <h3>Jetzt Termin vereinbaren</h3>
+        <p>Wir bitten dringend um vorherige Terminvereinbarung. Bei Infektsymptomen bitte telefonisch melden.</p>
+        <a href="tel:+498444545" class="btn-white">📞 +49 (8444) 545 anrufen</a>
+        <a href="mailto:info@arzt-schweitenkirchen.de" class="mail-link">✉️ info@arzt-schweitenkirchen.de</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script src="components.js"></script>
+<script>initPage('home')</script>
+</body>
+</html>
